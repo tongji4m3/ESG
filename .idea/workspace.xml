@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27c10ea6-d47a-4774-b72f-f1ea879c6624" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/MySpringBootApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/config/RedisConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/config/Swagger3Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/domain/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/service/impl/UserServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tongji/utils/RedisUtils.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tongji/config/SwaggerConfig2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tongji/MySpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tongji/MySpringBootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tongji/config/Swagger3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tongji/config/Swagger3Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tongji/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tongji/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +132,7 @@
       <workItem from="1595293592156" duration="5608000" />
       <workItem from="1595370769530" duration="1048000" />
       <workItem from="1595371925964" duration="2804000" />
-      <workItem from="1595374782794" duration="371000" />
+      <workItem from="1595374782794" duration="1976000" />
     </task>
     <servers />
   </component>
@@ -173,38 +168,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="640" y="330" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1595374895308" />
-    <state width="1493" height="308" key="GridCell.Tab.0.bottom" timestamp="1595375153141">
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1595375153141" />
-    <state width="1493" height="308" key="GridCell.Tab.0.center" timestamp="1595375153141">
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1595375153141" />
-    <state width="1493" height="308" key="GridCell.Tab.0.left" timestamp="1595375153140">
+    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1595375153140" />
-    <state width="1493" height="308" key="GridCell.Tab.0.right" timestamp="1595375153141">
+    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1595375153141" />
-    <state width="1493" height="308" key="GridCell.Tab.1.bottom" timestamp="1595374970765">
+    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.1.bottom" timestamp="1595376772685">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1595374970765" />
-    <state width="1493" height="308" key="GridCell.Tab.1.center" timestamp="1595374970765">
+    <state width="1493" height="148" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1595376772685" />
+    <state width="1493" height="148" key="GridCell.Tab.1.center" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1595374970765" />
-    <state width="1493" height="308" key="GridCell.Tab.1.left" timestamp="1595374970765">
+    <state width="1493" height="148" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.1.left" timestamp="1595376772684">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1595374970765" />
-    <state width="1493" height="308" key="GridCell.Tab.1.right" timestamp="1595374970765">
+    <state width="1493" height="148" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1595376772684" />
+    <state width="1493" height="148" key="GridCell.Tab.1.right" timestamp="1595376772685">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="308" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1595374970765" />
+    <state width="1493" height="148" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1595376772685" />
     <state width="1493" height="277" key="GridCell.Tab.2.bottom" timestamp="1595293574006">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
