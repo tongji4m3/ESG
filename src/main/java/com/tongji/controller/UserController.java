@@ -2,6 +2,7 @@ package com.tongji.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.tongji.domain.ReturnInfo;
 import com.tongji.domain.User;
 import com.tongji.service.UserService;
 import io.swagger.annotations.Api;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.Serializable;
 import java.util.Map;
 
-@Api(tags = "ESG的测试")
+@Api(tags = "User")
 @Controller
 @RequestMapping(value = {"/user"}, method = RequestMethod.POST)
 @CrossOrigin
@@ -24,24 +25,29 @@ public class UserController
     @Autowired
     UserService userService;
 
+    @Autowired
+    ObjectMapper mapper;//返回json数据
+
+    ReturnInfo info=new ReturnInfo();//返回信息
+
     @RequestMapping({"/register"})
     @ResponseBody
-    public Object register() throws JsonProcessingException
+    public Object register(String username, String password) throws JsonProcessingException
     {
-        User user = userService.getUserById(1);
-        //返回json数据
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(user);
+        info.setMsg("注册成功");
+        info.setStatus(1);
+
+        return mapper.writeValueAsString(info);
     }
 
     @RequestMapping({"/login"})
     @ResponseBody
-    public Object login(Integer id) throws JsonProcessingException
+    public Object login(String username, String password) throws JsonProcessingException
     {
-        System.out.println(id);
         User user = userService.getUserById(1);
-        //返回json数据
-        ObjectMapper mapper = new ObjectMapper();
+        user.setUsername(username);
+        user.setPassword(password);
+
         return mapper.writeValueAsString(user);
     }
 }

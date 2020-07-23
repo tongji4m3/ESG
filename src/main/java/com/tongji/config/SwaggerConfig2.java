@@ -16,7 +16,6 @@ public class SwaggerConfig2
 {
     /**
      * 通过 createRestApi函数来构建一个DocketBean
-     * 函数名,可以随意命名,喜欢什么命名就什么命名
      */
     @Bean
     public Docket createRestApi()
@@ -37,13 +36,7 @@ public class SwaggerConfig2
     {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("Spring Boot Swagger2 构建RESTful API")
-                //条款地址
-                .termsOfServiceUrl("http://despairyoke.github.io/")
-                .contact("zwd")
-                .version("1.0")
-                //描述
-                .description("API 描述")
+                .title("ESG项目API接口")
                 .build();
     }
 }

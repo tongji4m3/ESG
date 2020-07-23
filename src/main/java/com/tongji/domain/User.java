@@ -1,7 +1,10 @@
 package com.tongji.domain;
 
+import org.springframework.stereotype.Repository;
+
 import java.io.Serializable;
 
+@Repository
 public class User implements Serializable
 {
     private int id;
