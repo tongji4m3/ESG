@@ -30,24 +30,32 @@ public class UserController
 
     ReturnInfo info=new ReturnInfo();//返回信息
 
-    @RequestMapping({"/register"})
-    @ResponseBody
-    public Object register(String username, String password) throws JsonProcessingException
-    {
-        info.setMsg("注册成功");
-        info.setStatus(1);
-
-        return mapper.writeValueAsString(info);
-    }
-
+    @ApiOperation(value = "login", notes = "输入用户名密码进行登录,status,msg标识了状态." +
+            "如果成功,返回的info中存储了userId,userAuth" +
+            "如果失败,返回status和msg")
     @RequestMapping({"/login"})
     @ResponseBody
     public Object login(String username, String password) throws JsonProcessingException
     {
-        User user = userService.getUserById(1);
-        user.setUsername(username);
-        user.setPassword(password);
+        info.put("userId",1);
+        info.put("userAuth",2);
+        return mapper.writeValueAsString(info);
+    }
 
-        return mapper.writeValueAsString(user);
+    @RequestMapping({"/select"})
+    @ResponseBody
+    public Object select(Integer userId) throws JsonProcessingException
+    {
+        User user = userService.getUserById(userId);
+        info.put("user",user);
+        return mapper.writeValueAsString(info);
+    }
+
+    @RequestMapping({"/update"})
+    @ResponseBody
+    public Object update(User user) throws JsonProcessingException
+    {
+        //将用户更新信息存入数据库
+        return mapper.writeValueAsString(info);
     }
 }

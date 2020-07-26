@@ -1,0 +1,10 @@
+com\tongji\config\RedisConfig.class
+com\tongji\mapper\UserMapper.class
+com\tongji\domain\ReturnInfo.class
+com\tongji\domain\User.class
+com\tongji\config\SwaggerConfig2.class
+com\tongji\service\impl\UserServiceImpl.class
+com\tongji\service\UserService.class
+com\tongji\utils\RedisUtils.class
+com\tongji\MySpringBootApplication.class
+com\tongji\controller\UserController.class

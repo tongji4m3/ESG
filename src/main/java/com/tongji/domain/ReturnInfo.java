@@ -2,6 +2,9 @@ package com.tongji.domain;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
 封装了返回信息
  */
@@ -9,18 +12,27 @@ import org.springframework.stereotype.Repository;
 public class ReturnInfo
 {
     private int status;//内部的状态,例如用户名已经存在之类的
-    private Object object;//封装要返回的对象
     private String msg;//返回的信息,例如"用户名已经存在"
+    private Map<String, Object> info;//封装要返回的对象
 
-    public ReturnInfo(int status, Object object, String msg)
+    //要返回的有用数据放在这
+    public void put(String description,Object object)
     {
+        info.put(description, object);
+    }
+
+    public ReturnInfo(int status, String msg)
+    {
+        info = new HashMap<>();
         this.status = status;
-        this.object = object;
         this.msg = msg;
     }
 
     public ReturnInfo()
     {
+        info = new HashMap<>();
+        status = 1;
+        msg = "ok";
     }
 
     public int getStatus()
@@ -33,14 +45,14 @@ public class ReturnInfo
         this.status = status;
     }
 
-    public Object getObject()
+    public Map<String, Object> getInfo()
     {
-        return object;
+        return info;
     }
 
-    public void setObject(Object object)
+    public void setInfo(Map<String, Object> info)
     {
-        this.object = object;
+        this.info = info;
     }
 
     public String getMsg()
