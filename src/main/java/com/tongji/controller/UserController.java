@@ -44,10 +44,11 @@ public class UserController
 
     @RequestMapping({"/select"})
     @ResponseBody
-    public Object select(Integer userId) throws JsonProcessingException
+    public Object select(String userId) throws JsonProcessingException
     {
-        User user = userService.getUserById(userId);
-        info.put("user",user);
+        //User user = userService.getUserById(userId);
+        //info.put("user",user);
+        //在修改之前返回用户信息
         return mapper.writeValueAsString(info);
     }
 
