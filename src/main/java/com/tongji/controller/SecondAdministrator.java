@@ -2,7 +2,6 @@ package com.tongji.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.tongji.domain.Indicator;
 import com.tongji.domain.ReturnInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,11 +29,11 @@ public class SecondAdministrator
     @ResponseBody
     public Object createEntryStaff(String clientId,String username, String password) throws JsonProcessingException
     {
-        //往user表增加字段并且标识是数据录入员,而且往client_entryStaff中添加clientId和对应的userId
+        //往user表增加字段并且标识是数据录入员
         return mapper.writeValueAsString(info);
     }
 
-    @ApiOperation(value = "selectEntryStaff", notes ="新建一个数据录入员")
+    @ApiOperation(value = "selectEntryStaff", notes ="选择一个数据录入员")
     @RequestMapping({"/selectEntryStaff"})
     @ResponseBody
     public Object selectEntryStaff(String clientId) throws JsonProcessingException
@@ -49,6 +48,27 @@ public class SecondAdministrator
     public Object deleteEntryStaff(String clientId,String entryStaffId) throws JsonProcessingException
     {
         //删除对应公司的数据录入员
+        return mapper.writeValueAsString(info);
+    }
+
+    //----------审核报表-----------
+
+    @ApiOperation(value = "getReports", notes ="得到所有已经提交的报表")
+    @RequestMapping({"/getReports"})
+    @ResponseBody
+    public Object getReports(String clientId) throws JsonProcessingException
+    {
+        //从clientId查询所有template,再查所有report,并且返回提交过的
+        //需要哪些信息得看需求
+        return mapper.writeValueAsString(info);
+    }
+
+    @ApiOperation(value = "checkReport", notes ="点击某个报表时,审核已经提交的报表")
+    @RequestMapping({"/checkReport"})
+    @ResponseBody
+    public Object checkReport(String reportID) throws JsonProcessingException
+    {
+        //把审核状态改为1
         return mapper.writeValueAsString(info);
     }
 }

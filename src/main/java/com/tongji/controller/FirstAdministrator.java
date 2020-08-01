@@ -67,7 +67,7 @@ public class FirstAdministrator
     @ApiOperation(value = "createTemplate", notes ="")
     @RequestMapping({"/createTemplate"})
     @ResponseBody
-    public Object createTemplate(String templateName,String templateIndustry,String templateClient) throws JsonProcessingException
+    public Object createTemplate(String templateName,String templateInfo,String templateClient) throws JsonProcessingException
     {
         //直接存储在模板表中,Id自动生成
         return mapper.writeValueAsString(info);
@@ -84,14 +84,6 @@ public class FirstAdministrator
         //一个模板指标可能很多
         // 前端可以为每个指标都创建一个面板,点击则调用指标select方法
         //             查询该指标的详细信息
-        return mapper.writeValueAsString(info);
-    }
-
-    @ApiOperation(value = "selectTemplates", notes ="查询某个客户的所有模板,便于添加指标")
-    @RequestMapping({"/selectTemplates"})
-    @ResponseBody
-    public Object selectTemplates(String clientName) throws JsonProcessingException
-    {
         return mapper.writeValueAsString(info);
     }
 
@@ -140,18 +132,17 @@ public class FirstAdministrator
         return mapper.writeValueAsString(info);
     }
 
-    @ApiOperation(value = "deleteIndicator", notes ="删除某个指标,实现级联删除")
+    @ApiOperation(value = "deleteIndicator", notes ="删除某个模板的某个指标")
     @RequestMapping({"/deleteIndicator"})
     @ResponseBody
     public Object deleteIndicator(String templateId,String indicatorId) throws JsonProcessingException
     {
         //和select差不多的操作
-        //但是要级联删除,所以删除某个指标时,去indicator查找他的子类
         //得到相应的id,再在template_indicator中删除
         return mapper.writeValueAsString(info);
     }
 
-    @ApiOperation(value = "updateIndicator", notes ="更新某个指标的具体信息")
+    @ApiOperation(value = "updateIndicator", notes ="更新某个模板的某个指标的具体信息")
     @RequestMapping({"/updateIndicator"})
     @ResponseBody
     public Object updateIndicator(Indicator indicator) throws JsonProcessingException

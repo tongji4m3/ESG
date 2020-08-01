@@ -1,67 +1,55 @@
 package com.tongji.domain;
 
-import org.springframework.stereotype.Repository;
-
-import java.util.HashMap;
-import java.util.Map;
-
-/*
-封装了返回信息
- */
-@Repository
 public class ReturnInfo
 {
-    private int status;//内部的状态,例如用户名已经存在之类的
-    private String msg;//返回的信息,例如"用户名已经存在"
-    private Map<String, Object> info;//封装要返回的对象
-
-    //要返回的有用数据放在这
-    public void put(String description,Object object)
-    {
-        info.put(description, object);
-    }
-
-    public ReturnInfo(int status, String msg)
-    {
-        info = new HashMap<>();
-        this.status = status;
-        this.msg = msg;
-    }
+    private Integer status;
+    private String message;
+    private Object data;
 
     public ReturnInfo()
     {
-        info = new HashMap<>();
-        status = 1;
-        msg = "ok";
     }
 
-    public int getStatus()
+    public ReturnInfo(Integer status, String message, Object data)
+    {
+        this.status = status;
+        this.message = message;
+        this.data = data;
+    }
+
+    public ReturnInfo(Integer status, String message)
+    {
+        this.status = status;
+        this.message = message;
+    }
+
+    public Integer getStatus()
     {
         return status;
     }
 
-    public void setStatus(int status)
+    public void setStatus(Integer status)
     {
         this.status = status;
     }
 
-    public Map<String, Object> getInfo()
+    public String getMessage()
     {
-        return info;
+        return message;
     }
 
-    public void setInfo(Map<String, Object> info)
+    public void setMessage(String message)
     {
-        this.info = info;
+        this.message = message;
     }
 
-    public String getMsg()
+    public Object getData()
     {
-        return msg;
+        return data;
     }
 
-    public void setMsg(String msg)
+    public void setData(Object data)
     {
-        this.msg = msg;
+        this.data = data;
     }
 }

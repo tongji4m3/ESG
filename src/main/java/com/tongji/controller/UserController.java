@@ -6,15 +6,10 @@ import com.tongji.domain.ReturnInfo;
 import com.tongji.domain.User;
 import com.tongji.service.UserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.Serializable;
-import java.util.Map;
 
 @Api(tags = "User")
 @Controller
@@ -37,8 +32,8 @@ public class UserController
     @ResponseBody
     public Object login(String username, String password) throws JsonProcessingException
     {
-        info.put("userId",1);
-        info.put("userAuth",2);
+        User user = userService.getUserById(1);
+        info.setData(user);
         return mapper.writeValueAsString(info);
     }
 
