@@ -20,8 +20,23 @@ public class UserServiceImpl implements UserService
     private RedisUtils redisUtils;
 
     @Override
-    public User getUserById(Integer id)
+    public User getUserById(String id)
     {
-        return userMapper.getUserById(id);
+        return null;
+    }
+
+    @Override
+    public User login(String username, String password)
+    {
+        User user=null;
+        try
+        {
+            user=userMapper.login(username, password);
+            System.out.println(user);
+        }
+        catch (Exception e)
+        {
+        }
+        return user;
     }
 }

@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface UserService
 {
-    User getUserById(Integer id);
+    User getUserById(String id);
+
+    User login(String username, String password);
 }

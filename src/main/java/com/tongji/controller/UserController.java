@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Api(tags = "User")
 @Controller
 @RequestMapping(value = {"/user"}, method = RequestMethod.POST)
@@ -26,14 +29,28 @@ public class UserController
     ReturnInfo info=new ReturnInfo();//返回信息
 
     @ApiOperation(value = "login", notes = "输入用户名密码进行登录,status,msg标识了状态." +
-            "如果成功,返回的info中存储了userId,userAuth" +
+            "如果成功,返回的info中status=1,message=ok,还存储了userId,userAuth" +
             "如果失败,返回status和msg")
     @RequestMapping({"/login"})
     @ResponseBody
     public Object login(String username, String password) throws JsonProcessingException
     {
-        User user = userService.getUserById(1);
-        info.setData(user);
+        User user = userService.login(username,password);
+        if(user==null)
+        {
+            info.setStatus(-1);
+            info.setMessage("用户名或密码错误");
+            info.setData(null);
+        }
+        else
+        {
+            Map<String, Object> map = new HashMap<>();//用于返回实体的部分信息
+            map.put("userId", user.getUserId());
+            map.put("userAuth", user.getUserAuth());
+            info.setStatus(1);
+            info.setMessage("ok");
+            info.setData(map);
+        }
         return mapper.writeValueAsString(info);
     }
 
@@ -41,8 +58,6 @@ public class UserController
     @ResponseBody
     public Object select(String userId) throws JsonProcessingException
     {
-        //User user = userService.getUserById(userId);
-        //info.put("user",user);
         //在修改之前返回用户信息
         return mapper.writeValueAsString(info);
     }

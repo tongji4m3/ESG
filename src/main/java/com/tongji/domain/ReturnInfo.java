@@ -8,6 +8,8 @@ public class ReturnInfo
 
     public ReturnInfo()
     {
+        status = 1;
+        message = "ok";
     }
 
     public ReturnInfo(Integer status, String message, Object data)
