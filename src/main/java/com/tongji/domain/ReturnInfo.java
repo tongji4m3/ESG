@@ -1,22 +1,18 @@
 package com.tongji.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ReturnInfo
 {
     private Integer status;
     private String message;
-    private Object data;
+    private Map<String,Object> data=new HashMap<>();
 
     public ReturnInfo()
     {
         status = 1;
         message = "ok";
-    }
-
-    public ReturnInfo(Integer status, String message, Object data)
-    {
-        this.status = status;
-        this.message = message;
-        this.data = data;
     }
 
     public ReturnInfo(Integer status, String message)
@@ -50,8 +46,8 @@ public class ReturnInfo
         return data;
     }
 
-    public void setData(Object data)
+    public void putData(String name,Object data)
     {
-        this.data = data;
+        this.data.put(name,data);
     }
 }

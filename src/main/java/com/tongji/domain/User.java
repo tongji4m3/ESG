@@ -7,26 +7,36 @@ import java.io.Serializable;
 @Repository
 public class User implements Serializable
 {
-    private String userId;
+    private String userID;
     private String userAccount;
     private String userPassword;
     private int userAuth;
-    private String clientId;
+    private String clientID;
 
     public User()
     {
     }
 
-
-
-    public String getUserId()
+    @Override
+    public String toString()
     {
-        return userId;
+        return "User{" +
+                "userID='" + userID + '\'' +
+                ", userAccount='" + userAccount + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", userAuth=" + userAuth +
+                ", clientID='" + clientID + '\'' +
+                '}';
     }
 
-    public void setUserId(String userId)
+    public String getUserID()
     {
-        this.userId = userId;
+        return userID;
+    }
+
+    public void setUserID(String userID)
+    {
+        this.userID = userID;
     }
 
     public String getUserAccount()
@@ -59,25 +69,13 @@ public class User implements Serializable
         this.userAuth = userAuth;
     }
 
-    public String getClientId()
+    public String getClientID()
     {
-        return clientId;
+        return clientID;
     }
 
-    public void setClientId(String clientId)
+    public void setClientID(String clientID)
     {
-        this.clientId = clientId;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "User{" +
-                "userId=" + userId +
-                ", userAccount='" + userAccount + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", userAuth=" + userAuth +
-                ", clientId='" + clientId + '\'' +
-                '}';
+        this.clientID = clientID;
     }
 }
