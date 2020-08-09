@@ -14,7 +14,7 @@ public interface UserMapper
     @Select("select * from user where userID=#{id}")
     User getUserByID(String id);
 
-    @Select("select * from user where userID=#{clientID}")
+    @Select("select * from user where clientID=#{clientID}")
     User getUserByClientID(String clientID);
 
     @Select("select * from user where userAccount=#{username} and userPassword=#{password}")

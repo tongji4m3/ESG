@@ -91,7 +91,7 @@ public class FirstAdministrator
     @ResponseBody
     public Object deleteClient(String clientID) throws JsonProcessingException
     {
-        //删除client,级联删除对应的user,对应的模板
+        //删除client,级联删除对应的user,userInfo,对应的模板
         ReturnInfo info = new ReturnInfo();
         boolean flag = clientService.delete(clientID);
         //如果客户不存在,就不删除模板
@@ -224,7 +224,7 @@ public class FirstAdministrator
         //一个模板指标可能很多,存储的都是5级指标
         // 前端可以为每个指标都创建一个面板,点击则调用指标select方法
         //             查询该指标的详细信息
-        //可以根据指标表,查询所有6级指标,再从他们parent字段找对应5级,4级...1级
+        //可以根据指标表,查询所有5级指标,再从他们parent字段找对应4级,4级...1级
         //然后返回指标树(需要约定格式,主要是前端通过对应格式在视觉上转为指标树)
         ReturnInfo info = new ReturnInfo();
         List<String> indicatorsID = indicatorService.getIndicatorsID(templateID);
