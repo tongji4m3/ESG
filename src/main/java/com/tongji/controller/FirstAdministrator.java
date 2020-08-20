@@ -19,10 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 
 //一级管理员权限
@@ -163,11 +160,20 @@ public class FirstAdministrator
         //根据模板名称返回模板详情,包括从模板表中查到的模板信息
         ReturnInfo info = new ReturnInfo();
         List<Template> list = templateService.findTemplatesByLike("%" + templateName + "%");
-        Map<String, Template> map = new HashMap<>();
+
+        List<Map<String, Object>> result = new LinkedList<>();
+
         for (Template template : list)
         {
             String clientName = clientService.findClientName(template.getClientID());
-            map.put(clientName, template);
+            Map<String, Object> map = new HashMap<>();
+            map.put("clientName", clientName);
+            map.put("templateID",template.getTemplateID());
+            map.put("templateName",template.getTemplateName());
+            map.put("templateInfo",template.getTemplateInfo());
+            map.put("clientID",template.getClientID());
+
+            result.add(map);
         }
         if (list.size()==0)
         {
@@ -176,7 +182,7 @@ public class FirstAdministrator
         }
         else
         {
-            info.putData("templates", map);
+            info.putData("templates", result);
         }
         return mapper.writeValueAsString(info);
     }
