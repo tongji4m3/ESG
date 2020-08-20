@@ -21,4 +21,7 @@ public interface ClientMapper
 
     @Delete("delete from client where clientID=#{clientID}")
     int delete(String clientID);
+
+    @Select("select clientName from client where clientID=#{clientID}")
+    String findClientName(String clientID);
 }

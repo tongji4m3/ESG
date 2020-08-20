@@ -14,4 +14,6 @@ public interface ClientService
     List<Client> findAll();
 
     boolean findByName(String clientName);
+
+    String findClientName(String clientID);
 }

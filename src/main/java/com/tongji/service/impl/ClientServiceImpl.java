@@ -39,4 +39,10 @@ public class ClientServiceImpl implements ClientService
         Client client = clientMapper.findUserByUsername(clientName);
         return client != null;//用户存在
     }
+
+    @Override
+    public String findClientName(String clientID)
+    {
+        return clientMapper.findClientName(clientID);
+    }
 }
