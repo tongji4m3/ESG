@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Report implements Serializable
 {
-    private String recordID;
+    private String reportID;
     private String templateID;
     private String reporterID;
     private int reportYear;
@@ -12,12 +12,8 @@ public class Report implements Serializable
     private int commitState;
     private int checkState;
 
-    public Report(){}
-
-    public Report(String recordID, String templateID,
-                  String reporterID, int reportYear,
-                  int reportMonth, int commitState, int checkState) {
-        this.recordID = recordID;
+    public Report(String reportID, String templateID, String reporterID, int reportYear, int reportMonth, int commitState, int checkState) {
+        this.reportID = reportID;
         this.templateID = templateID;
         this.reporterID = reporterID;
         this.reportYear = reportYear;
@@ -26,10 +22,13 @@ public class Report implements Serializable
         this.checkState = checkState;
     }
 
+    public Report() {
+    }
+
     @Override
     public String toString() {
         return "Report{" +
-                "recordID='" + recordID + '\'' +
+                "reportID='" + reportID + '\'' +
                 ", templateID='" + templateID + '\'' +
                 ", reporterID='" + reporterID + '\'' +
                 ", reportYear=" + reportYear +
@@ -39,12 +38,12 @@ public class Report implements Serializable
                 '}';
     }
 
-    public String getRecordID() {
-        return recordID;
+    public String getReportID() {
+        return reportID;
     }
 
-    public void setRecordID(String recordID) {
-        this.recordID = recordID;
+    public void setReportID(String reportID) {
+        this.reportID = reportID;
     }
 
     public String getTemplateID() {
